@@ -1,0 +1,14 @@
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover {
+    background-color: #ddd;
+    text-decoration: none; /* 밑줄 제거 */
+    border-radius: 5px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-img-top {
+    object-fit: cover;
+}

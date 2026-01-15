@@ -1,3 +1,13 @@
+/*
+RMIT University Vietnam
+Course: COSC3060|61 Web Programming Studio
+Semester: 2025C
+Assessment: Fullstack in-class Lab Test
+Author: 본인 이름 (예: Gil Dong Hong)
+ID: 본인 학번 (예: s1234567)
+Acknowledgement: MDN, Course Canvas, etc.
+*/
+
 /**
  * Define bookSchema and bookModel
  */
@@ -7,12 +17,25 @@ const mongoose = require('./mongoose');
 const bookSchema = new mongoose.Schema({
     
     // Implement bookSchema
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    year: { type: Number, required: true },
+    image: { type: String, required: true },
+    category: { 
+        type: String, 
+        enum: ['TEXTBOOK', 'PHILOSOPHY', 'NOVEL'], // 카테고리 제한
+        required: true 
+    },
+    description: { type: String, required: true }
 
 });
 
 const readingListSchema = new mongoose.Schema({
     
     // Implement readingListSchema
+    name: { type: String, required: true },
+    // 요구사항에 "Arrays of bookSchema"라고 했으므로 임베디드 방식 사용
+    books: [bookSchema]
     
 });
 
